@@ -1,0 +1,83 @@
+/* Basic styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+#timer, #score {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+/* Style the game button */
+#button {
+    background-color: #ff4747; /* Red color */
+    color: white;
+    font-size: 1.5em;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px; /* Rounded button */
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Adding depth */
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+    outline: none;
+}
+
+/* Add hover effect */
+#button:hover {
+    background-color: #ff3333; /* Darker red on hover */
+    transform: translateY(-2px); /* Slightly raise the button */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Increase shadow depth */
+}
+
+/* Add active/pressed effect */
+#button:active {
+    transform: translateY(2px); /* Pressed down */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Decrease shadow depth */
+}
+
+/* Style for the leaderboard and admin buttons */
+#reset-leaderboard-btn, #logout-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Green for the reset button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+#reset-leaderboard-btn:hover, #logout-btn:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+.leaderboard-title {
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.leaderboard-entry {
+    margin: 5px 0;
+}

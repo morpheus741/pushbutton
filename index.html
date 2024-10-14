@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Push The Button</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Push The Button</h1>
+        <div id="user-name">Hello, Guest</div>
+
+        <!-- Timer display -->
+        <div id="timer">60</div>
+
+        <!-- Button to push -->
+        <button id="button">Push Me!</button>
+
+        <!-- Score display -->
+        <div id="score">Score: 0</div>
+
+        <!-- Leaderboard -->
+        <div id="leaderboard">
+            <div class="leaderboard-title">Weekly Leaderboard</div>
+        </div>
+
+        <!-- Hidden Reset Button for Admins -->
+        <button id="reset-leaderboard-btn" style="display: none;">Reset Leaderboard</button>
+
+        <!-- Hidden Logout Button for Admins -->
+        <button id="logout-btn" style="display: none;">Logout</button>
+
+    </div>
+
+    <script src="nameGenerator.js"></script>
+    <script src="game.js"></script>
+
+    <script>
+        // Check if the user is an admin
+        const isAdmin = localStorage.getItem('isAdmin');
+
+        if (isAdmin === 'true') {
+            // Show the reset and logout buttons if the user is an admin
+            document.getElementById('reset-leaderboard-btn').style.display = 'block';
+            document.getElementById('logout-btn').style.display = 'block';
+        }
+
+        // Logout functionality
+        document.getElementById('logout-btn').addEventListener('click', () => {
+            localStorage.removeItem('isAdmin'); // Clear admin status
+            window.location.href = 'index.html'; // Refresh the page
+        });
+
+        // Reset leaderboard event listener
+        document.getElementById('reset-leaderboard-btn').addEventListener('click', () => {
+            // Call the reset leaderboard function from game.js
+            resetLeaderboard();
+        });
+    </script>
+
+</body>
+</html>
